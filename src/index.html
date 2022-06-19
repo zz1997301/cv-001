@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            *{
+                box-sizing: border-box;
+            }
+            #span1 {
+                word-break: break-all;
+            }
+            #div1 {
+                position: fixed;
+                top: 50%;
+                left:50%;
+                margin: -100px 0 0 -100px;
+                animation-name: example;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                
+            }
+
+
+            #div1::before {
+                position: absolute;
+            }
+            #div1::after {
+                position: absolute;
+            }
+
+            @keyframes example{   
+                0%{transform:rotateY(0deg);}
+                100%{transform:rotateY(360deg);}
+            }
+            #example:hover {
+                animation-name:turnY;
+                animation-duration:3s;
+                animation-iteration-count:1;
+            }
+            @media(max-width:500px){
+                #span1 {
+                    height: 50vh;
+                    overflow: auto;
+                }
+                #div1 {
+                    position: relative;
+                }
+                #div1Wrapper {
+                    height: 50vh;
+                }
+                
+            }
+        </style>
+</head>
+<body>
+    <div id="span1">hi</div>
+    <style id="style">
+        
+    </style>
+    <div id="div1Wrapper">
+        <div id="div1"></div>
+    </div>
+    <script src="main.js"></script>
+    
+</body>
+</html>
